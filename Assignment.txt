@@ -1,0 +1,35 @@
+select last but one option in dropdown?
+
+WebElement value1 = driver.findElement(By.id("dropdown3"));
+		Select selectValue1 = new Select(value1);
+		List<WebElement> allOptions = selectValue1.getOptions();
+		int num = allOptions.size();
+		selectValue1.selectByIndex(num-1);
+
+Assignment 6:
+==============
+ 		String str3 = new String("Kutty");
+		 String str4 = new String("Kutty");
+		 
+		 if(str3==str4) {
+			 System.out.println(" Same text");
+		 }
+		 else
+			 System.out.println("Diff text");
+		 
+		 System.out.println("***");
+👆👆 Justify the above output
+==================================================
+Answer:1. The output is Diff text[else condition works here, if always fails here]
+== works with int not with string content.If == is used between strings,it will look for the reference.
+
+2.The strings here are declared using new and this dynamic allocation is stored in heap memory.Both the strings will have 
+different memory location.== operator is false in this case.
+
+3.When the strings are declared as literal,like Str3 = "kutty" and Str4 = "Kutty".the object will be created in String constant pool. 
+This allows JVM to optimize the initialization of String literal.The JVM wont create a new reference,it points to the value.
+In that case,== operator is true.
+
+when you have to compare strings, 
+you need to use str3.equals(str4) or str3.equalsignorecase(str4)[when you want to compare irrespective of upper or lower case]
+The output is Diff text[else condition works here if always fails here]
